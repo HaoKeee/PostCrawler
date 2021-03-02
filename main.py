@@ -28,7 +28,6 @@ def onepage_category(pi):
         item = {}
         item['code'] = x.xpath('td[1]')[0].text.strip()
         item['name'] = x.xpath('td[2]')[0].text.strip()
-        item['plan'] = x.xpath('td[3]')[0].text.strip()
         item['agency'] = x.xpath('td[4]')[0].text.strip()
         item['agency_type'] = x.xpath('td[5]')[0].text.strip()
         item['agency_level'] = x.xpath('td[6]')[0].text.strip()
@@ -45,6 +44,7 @@ def onepage_category(pi):
         item['category_type'] = x.xpath('td[17]')[0].text.strip()
         item['ps'] = x.xpath('td[18]')[0].text.strip()
         item['phone'] = x.xpath('td[19]')[0].text.strip()
+        item['plan'] = x.xpath('td[3]')[0].text.strip()
         items.append(item)
     
     for item in items:
@@ -78,7 +78,6 @@ def onepage_count(pi):
         item = {}
         item['code'] = x.xpath('td[1]')[0].text.strip().replace('·', '')
         item['name'] = x.xpath('td[2]')[0].text.strip()
-        item['plan'] = x.xpath('td[3]')[0].text.strip()
         item['submitted_num'] = x.xpath('td[4]')[0].text.strip()
         item['qualified_num'] = x.xpath('td[5]')[0].text.strip()
         item['paid_num'] = x.xpath('td[6]')[0].text.strip()
@@ -105,7 +104,6 @@ def pipeline(item):
         new_post = db.Posts(
             code=item['code'],
             name=item['name'],
-            plan=item['plan'],
             agency=item['agency'],
             agency_type=item['agency_type'],
             agency_level=item['agency_level'],
@@ -121,7 +119,8 @@ def pipeline(item):
             others=item['others'],
             category_type=item['category_type'],
             ps=item['ps'],
-            phone=item['phone']
+            phone=item['phone'],
+            plan=item['plan']
         )
 
         db.db_session.add(new_post)
