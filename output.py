@@ -35,4 +35,4 @@ def output_data(table_name):
     wb.save(table_name)
 
 if __name__ == '__main__':
-    output_data('安徽省2021考试录用公务员3.6.8:31信息汇总.xlsx')
+    output_data('安徽省2021考试录用公务员3-6信息汇总.xlsx')
