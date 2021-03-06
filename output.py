@@ -16,7 +16,7 @@ def output_data(table_name):
         item.append(post.job_type)
         item.append(post.job_position)
         item.append(post.major)
-        item.append(pgit ost.education)
+        item.append(post.education)
         item.append(post.degree)
         item.append(post.age)
         item.append(post.sex)
@@ -35,4 +35,4 @@ def output_data(table_name):
     wb.save(table_name)
 
 if __name__ == '__main__':
-    output_data('安徽省2021考试录用公务员3.2信息汇总.xlsx')
+    output_data('安徽省2021考试录用公务员3.6.8:31信息汇总.xlsx')

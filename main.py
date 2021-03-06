@@ -140,9 +140,9 @@ def db_commit():
         print(e)
 
 if __name__ == '__main__':
-    for x in range(1,205):
+    for x in range(1,206):   #206修改为所要爬取的工作职位页数+1
         print(x)
         onepage_category(x)
-    for y in range(1,62):
+    for y in range(1,63):    #63修改为所要爬取的报名情况页数+1
         print(y)
         onepage_count(y)
